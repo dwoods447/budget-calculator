@@ -14012,8 +14012,8 @@ window.Vue = __webpack_require__(37);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('expenses-component', __webpack_require__(54));
-Vue.component('income-component', __webpack_require__(51));
+Vue.component('expenses-component', __webpack_require__(40));
+Vue.component('income-component', __webpack_require__(43));
 var app = new Vue({
   el: '#app'
 });
@@ -47290,31 +47290,334 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(6)))
 
 /***/ }),
-/* 40 */,
-/* 41 */,
-/* 42 */,
-/* 43 */,
-/* 44 */,
-/* 45 */,
-/* 46 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(11)
 /* script */
-var __vue_script__ = __webpack_require__(52)
+var __vue_script__ = __webpack_require__(41)
 /* template */
-var __vue_template__ = __webpack_require__(53)
+var __vue_template__ = __webpack_require__(42)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/ExpensesComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-74df3447", Component.options)
+  } else {
+    hotAPI.reload("data-v-74df3447", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 41 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            rent_mortgage: 0,
+            home_renters_ins: 0,
+            prop_tax: 0,
+            hoa_fees: 0,
+            total_expenses: 0
+
+        };
+    },
+    computed: {
+        getTotalExpenses: function getTotalExpenses() {
+            this.total_expenses = parseInt(this.rent_mortgage) + parseInt(this.home_renters_ins) + parseInt(this.prop_tax) + parseInt(this.hoa_fees);
+            //console.log('Monthly Income: '+ (this.monthly_income) + ' Total Income: '+ (this.other_income)+ ' = '  + this.total_income);
+            return this.total_expenses;
+        }
+    }
+});
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "expense-container" }, [
+    _c("table", [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("tbody", [
+        _c("tr", { staticClass: "header" }, [
+          _vm._m(1),
+          _vm._v("\n            $"),
+          _c("td", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.rent_mortgage,
+                  expression: "rent_mortgage"
+                }
+              ],
+              attrs: { name: "monthly_income", type: "text" },
+              domProps: { value: _vm.rent_mortgage },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.rent_mortgage = $event.target.value
+                }
+              }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("tr", { staticClass: "header" }, [
+          _vm._m(2),
+          _vm._v("\n            $"),
+          _c("td", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.home_renters_ins,
+                  expression: "home_renters_ins"
+                }
+              ],
+              attrs: { name: "monthly_income", type: "text" },
+              domProps: { value: _vm.home_renters_ins },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.home_renters_ins = $event.target.value
+                }
+              }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("tr", { staticClass: "header" }, [
+          _vm._m(3),
+          _vm._v("\n            $"),
+          _c("td", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.prop_tax,
+                  expression: "prop_tax"
+                }
+              ],
+              attrs: { name: "monthly_income", type: "text" },
+              domProps: { value: _vm.prop_tax },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.prop_tax = $event.target.value
+                }
+              }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("tr", { staticClass: "header" }, [
+          _vm._m(4),
+          _vm._v("\n            $"),
+          _c("td", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.hoa_fees,
+                  expression: "hoa_fees"
+                }
+              ],
+              attrs: { name: "monthly_income", type: "text" },
+              domProps: { value: _vm.hoa_fees },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.hoa_fees = $event.target.value
+                }
+              }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("tr", { staticClass: "header" }, [
+          _vm._m(5),
+          _vm._v("\n            $"),
+          _c("td", {}, [
+            _c("input", {
+              attrs: {
+                id: "total-monthly-expenses",
+                name: "total-monthly-expenses",
+                type: "text"
+              },
+              domProps: { value: _vm.getTotalExpenses }
+            })
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("tr", [_c("th", [_vm._v("Enter Your Monthly Expenses")])])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("th", [
+      _c("a", { staticClass: "show", attrs: { href: "javascript:void(0);" } }, [
+        _vm._v("Housing and Utilities")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("th", [
+      _c("a", { staticClass: "show", attrs: { href: "javascript:void(0);" } }, [
+        _vm._v("Home or Renters Insurance")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("th", [
+      _c("a", { staticClass: "show", attrs: { href: "javascript:void(0);" } }, [
+        _vm._v("Property Tax")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("th", [
+      _c("a", { staticClass: "show", attrs: { href: "javascript:void(0);" } }, [
+        _vm._v("Condo or Homeowner Association (HOA) Fees")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("th", [
+      _c("a", { staticClass: "show", attrs: { href: "" } }, [
+        _vm._v("Total Monthly Expenses")
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-74df3447", module.exports)
+  }
+}
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(11)
+/* script */
+var __vue_script__ = __webpack_require__(44)
+/* template */
+var __vue_template__ = __webpack_require__(45)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -47353,7 +47656,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 52 */
+/* 44 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -47418,7 +47721,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 53 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -47599,294 +47902,10 @@ if (false) {
 }
 
 /***/ }),
-/* 54 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 46 */
+/***/ (function(module, exports) {
 
-var disposed = false
-var normalizeComponent = __webpack_require__(11)
-/* script */
-var __vue_script__ = __webpack_require__(55)
-/* template */
-var __vue_template__ = __webpack_require__(56)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/js/components/ExpensesComponent.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-74df3447", Component.options)
-  } else {
-    hotAPI.reload("data-v-74df3447", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 55 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    data: function data() {
-        return {
-            rent_mortgage: 0
-        };
-    },
-    computed: {}
-});
-
-/***/ }),
-/* 56 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "expense-container" }, [
-    _c("table", [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("tbody", [
-        _c("tr", { staticClass: "header" }, [
-          _vm._m(1),
-          _vm._v("\n            $"),
-          _c("td", [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.rent_mortgage,
-                  expression: "rent_mortgage"
-                }
-              ],
-              attrs: { id: "", name: "monthly_income", type: "text" },
-              domProps: { value: _vm.rent_mortgage },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.rent_mortgage = $event.target.value
-                }
-              }
-            })
-          ])
-        ]),
-        _vm._v(" "),
-        _c("tr", { staticClass: "header" }, [
-          _vm._m(2),
-          _vm._v("\n            $"),
-          _c("td", [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.monthly_income,
-                  expression: "monthly_income"
-                }
-              ],
-              attrs: { id: "", name: "monthly_income", type: "text" },
-              domProps: { value: _vm.monthly_income },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.monthly_income = $event.target.value
-                }
-              }
-            })
-          ])
-        ]),
-        _vm._v(" "),
-        _c("tr", { staticClass: "header" }, [
-          _vm._m(3),
-          _vm._v("\n            $"),
-          _c("td", [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.monthly_income,
-                  expression: "monthly_income"
-                }
-              ],
-              attrs: { id: "", name: "monthly_income", type: "text" },
-              domProps: { value: _vm.monthly_income },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.monthly_income = $event.target.value
-                }
-              }
-            })
-          ])
-        ]),
-        _vm._v(" "),
-        _c("tr", { staticClass: "header" }, [
-          _vm._m(4),
-          _vm._v("\n            $"),
-          _c("td", [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.monthly_income,
-                  expression: "monthly_income"
-                }
-              ],
-              attrs: { id: "", name: "monthly_income", type: "text" },
-              domProps: { value: _vm.monthly_income },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.monthly_income = $event.target.value
-                }
-              }
-            })
-          ])
-        ])
-      ])
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [_c("th", [_vm._v("Enter Your Monthly Expenses")])])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("th", [
-      _c(
-        "a",
-        { staticClass: "show", attrs: { href: "javascript:void(0);", id: "" } },
-        [_vm._v("Housing and Utilities")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("th", [
-      _c(
-        "a",
-        { staticClass: "show", attrs: { href: "javascript:void(0);", id: "" } },
-        [_vm._v("Home or Renters Insurance")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("th", [
-      _c(
-        "a",
-        { staticClass: "show", attrs: { href: "javascript:void(0);", id: "" } },
-        [_vm._v("Property Tax")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("th", [
-      _c(
-        "a",
-        {
-          staticClass: "show",
-          attrs: { href: "javascript:void(0);", id: "take-home" }
-        },
-        [_vm._v("Condo or Homeowner Association (HOA) Fees")]
-      )
-    ])
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-74df3447", module.exports)
-  }
-}
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
