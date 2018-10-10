@@ -1,13 +1,14 @@
 <template>
     <div class="income-container">
+        <h2>Enter Your Monthly Income</h2>
         <table>
                 <thead>
                 <tr>
-                    <th colspan="2"><span v-b-toggle.collapse1><i class="fas fa-chevron-down"></i></span>&nbsp;&nbsp;&nbsp;Enter Your Monthly Income</th>
+                    <th colspan="2"><span v-b-toggle.collapse1><i class="fas fa-chevron-down"></i></span>&nbsp;&nbsp;&nbsp; Monthly Pay</th>
                 </tr>
                 </thead>
                 <tbody>
-                <b-collapse id="collapse1" class="mt-2">
+                <b-collapse visible id="collapse1" class="mt-2">
                 <tr class="header">
                     <th><a href="javascript:void(0);" class="show" id="take-home">Net Monthly Pay</a></th>
                     $<td><input id="monthly_income" name="monthly_income" type="text" v-model="monthly_income"></td>
@@ -19,18 +20,18 @@
                 </b-collapse>
                 </tbody>
        </table>
-
+        <h2>Enter Your Monthly Expenses</h2>
         <table>
             <thead>
             <tr>
-                <th colspan="2">Enter Your Monthly Expenses</th>
+                <th colspan="2"><span v-b-toggle.collapse2><i class="fas fa-chevron-down"></i></span>&nbsp;&nbsp;&nbsp;Housing & Utilities</th>
             </tr>
             </thead>
             <tbody>
+            <b-collapse id="collapse2" class="mt-2">
             <tr class="header">
                 <th><a href="javascript:void(0);" class="show" >Rent of Mortgage</a></th>
                 $<td><input  id="rent_mortgage" name="rent_mortgage" type="text" v-model="rent_mortgage"></td>
-
             </tr>
             <tr class="header">
                 <th><a href="javascript:void(0);" class="show" >2nd Mortgage</a></th>
@@ -72,12 +73,22 @@
                 <th><a href="javascript:void(0);" class="show">Cable & Internet</a></th>
                 $<td><input id="cable_internet" name="cable_internet" type="text"  v-model="cable_internet"></td>
             </tr>
+            </b-collapse>
+            </tbody>
+        </table><!-- Housing Utilities -->
+
+        <table>
+            <thead>
+            <tr>
+                <th colspan="2"><span v-b-toggle.collapse3><i class="fas fa-chevron-down"></i></span>&nbsp;&nbsp;&nbsp;Transportation</th>
+            </tr>
+            </thead>
+            <tbody>
+            <b-collapse id="collapse3" class="mt-2">
             <tr class="header">
                 <th><a href="javascript:void(0);" class="show">Car Payment</a></th>
                 $<td><input  id="car_payment" name="car_payment" type="text"  v-model="car_payment"></td>
             </tr>
-
-
             <tr>
                 <th><a href="javascript:void(0);" class="show">2nd Car Payment</a></th>
                 $<td><input id="second_car_payment" name="second_car_payment" type="text"  v-model="second_car_payment"></td>
@@ -98,7 +109,24 @@
                 <th><a href="javascript:void(0);" class="show">Parking/Tolls</a></th>
                 $<td><input id="parking_tolls" name="parking_tolls" type="text"  v-model="parking_tolls"></td>
             </tr>
-            <tr class="header">
+            </b-collapse>
+            </tbody>
+        </table><!-- Transportation -->
+
+
+
+
+
+        <table>
+            <thead>
+            <tr>
+                <th colspan="2"><span v-b-toggle.collapse4><i class="fas fa-chevron-down"></i></span>&nbsp;&nbsp;&nbsp;Food and Groceries</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <b-collapse id="collapse4" class="mt-2">
+         <tr class="header">
                 <th><a href="javascript:void(0);" class="show">Groceries & Household Goods</a></th>
                 $<td><input  id="groceries_household" name="groceries_household" type="text"  v-model="groceries_household"></td>
             </tr>
@@ -113,8 +141,24 @@
                 $<td><input  id="eating_out" name="eating_out" type="text"  v-model="eating_out"></td>
             </tr>
 
+         </b-collapse>
+            </tbody>
+        </table><!-- Food and Groceries -->
 
+
+
+
+        <table>
+            <thead>
             <tr>
+                <th colspan="2"><span v-b-toggle.collapse5><i class="fas fa-chevron-down"></i></span>&nbsp;&nbsp;&nbsp;Health and Beauty</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <b-collapse id="collapse5" class="mt-2">
+
+             <tr>
                 <th><a href="javascript:void(0);" class="show">Health Insurance & Co-pays </a></th>
                 $<td><input id="health_ins_copay" name="health_ins_copay" type="text"  v-model="health_ins_copay"></td>
             </tr>
@@ -142,6 +186,18 @@
                 $<td><input  id="barber_shop" name="barber_shop" type="text"  v-model="barber_shop"></td>
             </tr>
 
+                 </b-collapse>
+            </tbody>
+        </table><!-- Health and Beauty -->
+
+        <table>
+            <thead>
+            <tr>
+                <th colspan="2"><span v-b-toggle.collapse6><i class="fas fa-chevron-down"></i></span>&nbsp;&nbsp;&nbsp;Child Care</th>
+            </tr>
+            </thead>
+            <tbody>
+            <b-collapse id="collapse6" class="mt-2">
             <tr>
                 <th><a href="javascript:void(0);" class="show">Child Care</a></th>
                 $<td><input id="child_care" name="child_care" type="text"  v-model="child_care"></td>
@@ -155,7 +211,20 @@
                 <th><a href="javascript:void(0);" class="show">School Tuition & Supplies</a></th>
                 $<td><input id="school_supplies" name="school_supplies" type="text"  v-model="school_supplies"></td>
             </tr>
-            <tr class="header">
+            </b-collapse>
+            </tbody>
+        </table><!-- Child Care -->
+
+
+        <table>
+            <thead>
+            <tr>
+                <th colspan="2"><span v-b-toggle.collapse7><i class="fas fa-chevron-down"></i></span>&nbsp;&nbsp;&nbsp;Debt & Loan Payments</th>
+            </tr>
+            </thead>
+            <tbody>
+            <b-collapse id="collapse7" class="mt-2">
+           <tr class="header">
                 <th><a href="javascript:void(0);" class="show">Credit Cards </a></th>
                 $<td><input id="credit_cards" name="credit_cards" type="text"  v-model="credit_cards"></td>
             </tr>
@@ -181,9 +250,18 @@
                 <th><a href="javascript:void(0);" class="show">Miscellaneous Debt Payments</a></th>
                 $<td><input id="miscellaneous_debt_payments" name="miscellaneous_debt_payments" type="text"  v-model="miscellaneous_debt_payments"></td>
             </tr>
+        </b-collapse>
+            </tbody>
+        </table><!-- Debt & Loan Payments -->
 
-
-
+        <table>
+            <thead>
+            <tr>
+                <th colspan="2"><span v-b-toggle.collapse8><i class="fas fa-chevron-down"></i></span>&nbsp;&nbsp;&nbsp;Misc. Expenses</th>
+            </tr>
+            </thead>
+            <tbody>
+            <b-collapse id="collapse8" class="mt-2">
             <tr>
                 <th><a href="javascript:void(0);" class="show">ATM Fees</a></th>
                 $<td><input id="atm_fees" name="atm_fees" type="text"  v-model="atm_fees"></td>
@@ -225,7 +303,14 @@
                 <th><a href="javascript:void(0);" class="show">Other Expenses</a></th>
                 $<td><input id="other_expenses" name="other_expenses" type="text"  v-model="other_expenses"></td>
             </tr>
+            </b-collapse>
 
+            </tbody>
+        </table><!-- Misc. Expenses -->
+
+
+        <table>
+           <tbody>
             <tr class="header">
                 <th><a href="javascript:void(0);" class="show">Total Monthly Expenses</a></th>
                 $<td><input id="total_monthly_expenses" name="total_monthly_expenses" type="text"  v-bind:value="getTotalExpenses"></td>
@@ -233,7 +318,7 @@
 
 
             <tr class="header">
-                <th><a href="javascript:void(0);" class="show" id="total-monthly-income">Total Monthly Income</a></th>
+                <th><a href="javascript:void(0);" class="show" id="total-monthly-income">Total Monthly Savings</a></th>
                 $<td class><input id="total_monthly_income" name="total_monthly_income" type="text"  v-bind:value="getTotalMonthlyIncome"></td>
             </tr>
 
