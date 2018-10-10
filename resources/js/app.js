@@ -15,8 +15,11 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('expenses-component', require('./components/ExpensesComponent.vue'));
-Vue.component('income-component', require('./components/IncomeComponent.vue'));
+
+Vue.component('form-component', require('./components/ParentFormComponent.vue'));
+const BootstrapVue = require('bootstrap-vue');
+Vue.use(BootstrapVue);
+export const EventBus = new Vue();
 const app = new Vue({
     el: '#app'
 });
